@@ -19,7 +19,7 @@ In recent years, the Lebanse economy has been collapsing. Many Lebanese people l
 - Mohamad Khodor (Database Manager and Developer)
 
 
-## Prerequisites:
+## Requirements:
 The following application is created using the following Languages, ToolKits, and Libraries:
 - C++
 - CSS 
