@@ -708,7 +708,6 @@ AddDonationWindow * AddDonationWindow::createWindow(){
                             "Iran|"
                             "Iraq|"
                             "Ireland|"
-                            "Israel|"
                             "Italy|"
                             "Jamaica|"
                             "Japan|"
