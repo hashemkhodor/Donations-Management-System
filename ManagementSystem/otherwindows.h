@@ -146,6 +146,8 @@ public:
 class AddPeopleWindow: public OtherWindows{
   Q_OBJECT;
    public:
+   int i;
+
    AddPeopleWindow(){WindowType="AddPeopleWindow";setParent(0);}
 
 public slots:
@@ -157,6 +159,7 @@ public:
     virtual AddPeopleWindow * createWindow();
     virtual AddPeopleWindow * getCentralWidget(){return this;};
     virtual windowtypes getWindowType(){return addPeopleWin;};
+   void resetfields();
   //  virtual QGridLayout * getLayout();
    // virtual windowtypes getWindowType();
 public:
@@ -197,6 +200,7 @@ public:
     QLabel * x= NULL;
     QTreeWidgetItem * row= NULL;
     QStringList headers={"First Name","Last Name","BirthDate","Civil Record Number","Village","Address","Phone Number","Chronic Disease"};
+    QDate minDay;
 
 
 
@@ -263,6 +267,7 @@ public:
     QPushButton * edit_suggested_button;
 
     QTextEdit * comments_edit;
+    QDate minDay;
 
 
 

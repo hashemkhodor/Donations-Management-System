@@ -127,200 +127,11 @@ QString villages ("Aabboudiyeh|"
            "Zouq El Hassineh|"
            "Zouq Haddara|");
 
-QString nationalities("Afghanistan|"
-                    "Albania|"
-                    "Algeria|"
-                    "Andorra|"
-                    "Angola|"
-                    "Antigua and Barbuda|"
-                    "Argentina|"
-                    "Armenia|"
-                    "Australia|"
-                    "Austria|"
-                    "Azerbaijan|"
-                    "Bahamas|"
-                    "Bahrain|"
-                    "Bangladesh|"
-                    "Barbados|"
-                    "Belarus|"
-                    "Belgium|"
-                    "Belize|"
-                    "Benin|"
-                    "Bhutan|"
-                    "Bolivia|"
-                    "Bosnia and Herzegovina|"
-                    "Botswana|"
-                    "Brazil|"
-                    "Brunei |"
-                    "Bulgaria|"
-                    "Burkina Faso|"
-                    "Burundi|"
-                    "Côte d'Ivoire|"
-                    "Cabo Verde|"
-                    "Cambodia|"
-                    "Cameroon|"
-                    "Canada|"
-                    "Central African Republic|"
-                    "Chad|"
-                    "Chile|"
-                    "China|"
-                    "Colombia|"
-                    "Comoros|"
-                    "Congo (Congo-Brazzaville)|"
-                    "Costa Rica|"
-                    "Croatia|"
-                    "Cuba|"
-                    "Cyprus|"
-                    "Czechia (Czech Republic)|"
-                    "Democratic Republic of the Congo|"
-                    "Denmark|"
-                    "Djibouti|"
-                    "Dominica|"
-                    "Dominican Republic|"
-                    "Ecuador|"
-                    "Egypt|"
-                    "El Salvador|"
-                    "Equatorial Guinea|"
-                    "Eritrea|"
-                    "Estonia|"
-                    "Eswatini (fmr. 'Swaziland')|"
-                    "Ethiopia|"
-                    "Fiji|"
-                    "Finland|"
-                    "France|"
-                    "Gabon|"
-                    "Gambia|"
-                    "Georgia|"
-                    "Germany|"
-                    "Ghana|"
-                    "Greece|"
-                    "Grenada|"
-                    "Guatemala|"
-                    "Guinea|"
-                    "Guinea-Bissau|"
-                    "Guyana|"
-                    "Haiti|"
-                    "Holy See|"
-                    "Honduras|"
-                    "Hungary|"
-                    "Iceland|"
-                    "India|"
-                    "Indonesia|"
-                    "Iran|"
-                    "Iraq|"
-                    "Ireland|"
-                    "Italy|"
-                    "Jamaica|"
-                    "Japan|"
-                    "Jordan|"
-                    "Kazakhstan|"
-                    "Kenya|"
-                    "Kiribati|"
-                    "Kuwait|"
-                    "Kyrgyzstan|"
-                    "Laos|"
-                    "Latvia|"
+QString nationalities(
                     "Lebanon|"
-                    "Lesotho|"
-                    "Liberia|"
-                    "Libya|"
-                    "Liechtenstein|"
-                    "Lithuania|"
-                    "Luxembourg|"
-                    "Madagascar|"
-                    "Malawi|"
-                    "Malaysia|"
-                    "Maldives|"
-                    "Mali|"
-                    "Malta|"
-                    "Marshall Islands|"
-                    "Mauritania|"
-                    "Mauritius|"
-                    "Mexico|"
-                    "Micronesia|"
-                    "Moldova|"
-                    "Monaco|"
-                    "Mongolia|"
-                    "Montenegro|"
-                    "Morocco|"
-                    "Mozambique|"
-                    "Myanmar (formerly Burma)|"
-                    "Namibia|"
-                    "Nauru|"
-                    "Nepal|"
-                    "Netherlands|"
-                    "New Zealand|"
-                    "Nicaragua|"
-                    "Niger|"
-                    "Nigeria|"
-                    "North Korea|"
-                    "North Macedonia|"
-                    "Norway|"
-                    "Oman|"
-                    "Pakistan|"
-                    "Palau|"
                     "Palestine State|"
-                    "Panama|"
-                    "Papua New Guinea|"
-                    "Paraguay|"
-                    "Peru|"
-                    "Philippines|"
-                    "Poland|"
-                    "Portugal|"
-                    "Qatar|"
-                    "Romania|"
-                    "Russia|"
-                    "Rwanda|"
-                    "Saint Kitts and Nevis|"
-                    "Saint Lucia|"
-                    "Saint Vincent and the Grenadines|"
-                    "Samoa|"
-                    "San Marino|"
-                    "Sao Tome and Principe|"
-                    "Saudi Arabia|"
-                    "Senegal|"
-                    "Serbia|"
-                    "Seychelles|"
-                    "Sierra Leone|"
-                    "Singapore|"
-                    "Slovakia|"
-                    "Slovenia|"
-                    "Solomon Islands|"
-                    "Somalia|"
-                    "South Africa|"
-                    "South Korea|"
-                    "South Sudan|"
-                    "Spain|"
-                    "Sri Lanka|"
-                    "Sudan|"
-                    "Suriname|"
-                    "Sweden|"
-                    "Switzerland|"
                     "Syria|"
-                    "Tajikistan|"
-                    "Tanzania|"
-                    "Thailand|"
-                    "Timor-Leste|"
-                    "Togo|"
-                    "Tonga|"
-                    "Trinidad and Tobago|"
-                    "Tunisia|"
-                    "Turkey|"
-                    "Turkmenistan|"
-                    "Tuvalu|"
-                    "Uganda|"
-                    "Ukraine|"
-                    "United Arab Emirates|"
-                    "United Kingdom|"
-                    "United States of America|"
-                    "Uruguay|"
-                    "Uzbekistan|"
-                    "Vanuatu|"
-                    "Venezuela|"
-                    "Vietnam|"
-                    "Yemen|"
-                    "Zambia|"
-                    "Zimbabwe|");
+                    );
 
 void mainWindow:: startHere(){
     parentt->changeWindow(entranceWin);
@@ -556,9 +367,11 @@ AddPeopleWindow * AddPeopleWindow::createWindow(){
     phone_number_edit= new QLineEdit(tr(""));
 
     //Creating QDateEdit
-    QDate minDay(1900,1,1);
-    birthdate_edit= new QDateEdit();
-
+    minDay= QDate(1600,1,1);
+    birthdate_edit= new QDateEdit(minDay);
+    // PlaceHolders:
+    first_name_edit->setPlaceholderText(tr("First Name"));
+    last_name_edit->setPlaceholderText(tr("Last Name"));
     //Creating QComboBox
     chronic_disease_edit= new QComboBox();
     chronic_disease_edit->addItem(tr(""));
@@ -637,8 +450,8 @@ AddDonationWindow * AddDonationWindow::createWindow(){
 
 
     //Creating QDateEdit
-    QDate minDay(1900,1,1);
-    date_edit= new QDateEdit();
+    minDay= QDate(1900,1,1);
+    date_edit= new QDateEdit(minDay);
 
     //Creating QComboBox
     donation_type_edit1= new QComboBox();
@@ -676,8 +489,7 @@ AddDonationWindow * AddDonationWindow::createWindow(){
         village_edit= new QComboBox();
         village_edit->addItem(tr(""));
         v="";
-        for(auto m :villages
-            ){
+        for(auto m :villages){
             if(m == '|'){village_edit->addItem(v);v="";}
             else{v+=m;}
         }
@@ -766,22 +578,24 @@ void AddPeopleWindow:: submitAct(){
         }
     }
     */
-    Recipient * recipient= new Recipient(rand()%20,first_name_edit->displayText(),last_name_edit->displayText(),birthdate_edit->date(),civil_record_num_edit->displayText().toInt(),village_edit->currentText(),address_edit->displayText(),phone_number_edit->displayText(),true,comments_edit->toPlainText());
-    recipients.push_back(recipient);
-    qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
+
+    //qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
 
 }
 
 void AddPeopleWindow:: viewAct(){
     //popUpWindow= new QDialog(this);
     //popUpPeople= new QTreeWidget(popUpWindow);
+    //if(popUpPeople != NULL && popUpPeople->isVisible()){}
+    if(popUpPeople==NULL){
     popUpPeople= new QTreeWidget();
     popUpPeople->setColumnCount(7);
     popUpPeople->setHeaderLabels(headers);
+    i=0;}
     row= new QTreeWidgetItem(popUpPeople);
 
 
-    for(int i=0; i<recipients.size();i++){
+    for(;i<recipients.size();i++){
         row->setText(0,recipients[i]->f_name);
         row-> setText(1,recipients[i]->l_name);
         row -> setText(2,recipients[i]->birthdate.toString());
@@ -793,11 +607,11 @@ void AddPeopleWindow:: viewAct(){
         //donationsView-> setItemWidget(row,5,button);
         row= new QTreeWidgetItem(popUpPeople);
 
-
-
     }
+    delete row;
     // Leakage of info and memory
-    popUpPeople->show();
+    if(!(popUpPeople->isVisible())){
+    popUpPeople->show();}
    /*
     popUpWindow->exec();
     delete row;
@@ -805,11 +619,32 @@ void AddPeopleWindow:: viewAct(){
     delete popUpWindow;*/
 
 
-    qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
+    //qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
 
 }
-void AddPeopleWindow:: addAct(){
+void AddPeopleWindow :: addAct(){
+    if(first_name_edit->displayText()!= tr("") && last_name_edit->displayText()!= tr("") &&civil_record_num_edit->displayText() != tr("") &&  village_edit->currentText() != tr("") && phone_number_edit->displayText()!= tr("") ) {
+    Recipient * recipient= new Recipient(rand()%20,first_name_edit->displayText(),last_name_edit->displayText(),birthdate_edit->date(),civil_record_num_edit->displayText().toInt(),village_edit->currentText(),address_edit->displayText(),phone_number_edit->displayText(),true,comments_edit->toPlainText());
+    recipients.push_back(recipient);
+    parentt->statusBar()->showMessage(tr("Added %1 %2").arg(first_name_edit->displayText()).arg(last_name_edit->displayText()));
+    resetfields();
+    }
+    else{
+        QMessageBox::warning(this,tr("Missing Info"),tr("Fill all the info with stars"));
 
-    qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
+    }
+
+   // qDebug() <<first_name_edit->displayText()<< birthdate_edit->date().toString("yyyy-MM-dd")<<civil_record_num_edit->displayText()<<address_edit->displayText()<<chronic_disease_edit->currentText()<<comments_edit->toPlainText();
+
+}
+void AddPeopleWindow :: resetfields(){
+    first_name_edit->setText(tr(""));
+    last_name_edit-> setText(tr(""));
+    birthdate_edit->setDate(minDay);
+    civil_record_num_edit->setText(tr(""));
+    village_edit->setCurrentText(tr(""));
+    phone_number_edit->setText(tr(""));
+    address_edit->setText(tr(""));
+    chronic_disease_edit->setCurrentText(tr(""));
 
 }
