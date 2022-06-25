@@ -2,7 +2,7 @@
 Create an abstract class Human that has the following public pure virtual methods:
 
 - virtual vector< String >  get_info()=0;
-- virtual int priority()=0;
+- virtual double getpriority()=0;
 - virtual long int ID()=0;
 
 
