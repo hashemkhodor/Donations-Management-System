@@ -1,0 +1,38 @@
+QMainWindow{max-width: 940px;
+margin:0 auto;
+padding:0 10px;
+}
+QLineEdit{
+background-color:rgb(255, 255, 255);
+border: 0.5px solid rgb(0, 170, 255);
+border-radius: '5px';
+color:rgb(0, 0, 0);
+
+}
+QComboBox{
+background-color:rgb(130, 222, 255);
+border-radius: 5px;
+border: 1px solid grey;
+
+}
+QLabel{
+text-align: center;
+	color:rgb(17, 45, 78);
+}
+QMainWindow{
+background-color: rgb(255, 255, 255);}
+QPushButton{
+	
+	background-color:rgb(0, 170, 255);
+	color: white ;
+   transition: background .5s;
+}
+QPushButton:hover{
+background-color: rgb(10, 149, 255);
+cursor: pointer;
+transition: background .5s; 
+}
+Qspinbox{ 
+border-radius: 5px;
+border: 1px solid black;
+}
